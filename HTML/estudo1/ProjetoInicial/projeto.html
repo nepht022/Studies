@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Projeto</title><!--definir o titulo da pagina-->
+        <meta charset="utf-8"><!--definir a aceitação acentos-->
+    </head>
+    <body>
+        <h1><strike>Sobre a empresa</strike><!--cortado no meio--></h1><!--header 1, vai até o 6-->
+        <p><u>Esta é uma empresa...</u><!--sublinhado--></p><!--parágrafo-->
+
+        <hr> <!--criar uma linha-->
+
+        <h2>Sobre a <strong>empresa</strong><!--negrito--></h2>
+        <p><em>esta é uma empresa...</em><!--itálico--></p>
+        <!--<br>quebra linha-->
+
+        <ul type="circle"><!--lista nao ordenada, pode usar "disc" e "square" no "type"-->
+            <li>um macaco</li><!--item da lista-->
+            <li>dois caramujos</li>
+        </ul>
+
+        <ol type="1"><!--lista ordenada, pode usar "A", "a", "i" e "I" no "type"-->
+            <li>comida</li>
+            <li>carro</li>
+        </ol>
+
+        <img src="Imagens/lamborghini.jfif" width="300" height="168"><!--imagem, pode usar um link da web tbm-->
+
+        <br><h2>Caracteres Especiais</h2>
+        <p>&lt;p&gt;</p>
+
+        <a href="contato.html">Contato</a><!--definir um hiperlink-->
+        <a href="index.html">Home</a>
+        <h2>Página Principal</h2>
+        <p>dawjidawibdiawbdibawidbiawbdibnawbndiawnbdbanwdnawnd
+            wadbhabwduyhabwudbauhywbdubwadbaw
+        </p>
+        <p>
+            dawdawdmawmdoikmawdmawmda
+        </p>
+
+        <table border="2" width="50%"><!--definir uma tabela-->
+            <tr><!--linha da tabela-->
+                <th>Codigo</th><!--cabeçalho da tabela-->
+                <th>Produto</th>
+                <th>Preço</th>
+            </tr>
+            <tr>
+                <td>01</td><!--dado da tabela-->
+                <td>Feijao</td>
+                <td>R$2,52</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td><img src="Imagens/lamborghini.jfif" width="20%"></td>
+                <td>R$259.000</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Desconto</td>
+                <td colspan="2">Cupom 1: 12 reais</td>
+            </tr>
+            <tr>
+
+                <td colspan="2">Cupom 2: 27 reais</td>
+            </tr>
+        </table>
+
+        <h2>Login</h2>
+        <form><!--definir um formulario-->
+            <p>Login:</p>
+            <input type="text" name="login">
+
+            <p>Senha:</p>
+            <input type="password" name="senha"><br>
+
+            <input type="button" value="Login">
+        </form>
+
+        <h2>Cadastro</h2>
+        <form>
+            <p>Login:</p>
+            <input type="text" name="login"><br><br>
+
+            <p>Sexo:</p>
+            <input type="radio" name="sexo" value="M">Masculino<br>
+            <input type="radio" name="sexo" value="F">Feminino<br><br>
+
+            <p>Interesses:</p>
+            <input type="checkbox" name="interesses">Futebol<br>
+            <input type="checkbox" name="interesses">Cursos<br>
+            <input type="checkbox" name="interesses">Moda<br><br>
+
+            <p>Estado:</p>
+            <select name="estado">
+                <option value="sp">SP</option>
+                <option value="rj">RJ</option>
+                <option value="mg">MG</option>
+            </select><br><br>
+
+            <p>Observações:</p>
+            <textarea></textarea><br><br>
+
+            <input type="submit" value="Enviar"><br><br>
+        </form>
+
+    </body>
+</html>
