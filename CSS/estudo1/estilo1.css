@@ -1,0 +1,21 @@
+body{
+    background: rgb(226, 209, 114);/*define uma cor pro fundo do body*/
+    background-image: url(imagens/yoshi.png);/*define uma imagem pro fundo do body*/
+    background-repeat: no-repeat;/*define a forma de repetição de imagens no fundo do body*/
+    background-attachment: scroll;/*define o padrao da imagem em relação ao scroll da pagina*/
+    background-position: center;/*define uma posição pra imagem no background*/
+}
+#conteudo{
+    border: 1px solid red;/*define uma borda e suas propriedades, espessura, estilo, cor*/
+    /*Os tamanhos 16px 1em(relativo ao tamanho do pai) e 100% são os padrões*/
+    /*border-width: 2px 4px 8px 16px;
+    border-color: red blueviolet blue pink;
+    border-style: solid dotted dashed outset;*/
+}
+#assinatura{
+    font-size: 30px;/*define o tamanho da font*/
+    font-family: 'Courier New', Courier, monospace;/*define o tipo da font*/
+    font-weight: bold;/*define o peso da font*/
+    font-style: italic;/*define o estilo da font*/
+    text-decoration: underline;/*define uma decoracao pro texto*/
+}
