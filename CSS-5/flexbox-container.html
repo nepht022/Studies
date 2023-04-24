@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flexbox - Container</title>
+
+        <style type="text/css">
+            #conteudo{
+                background: #dcdcdc;
+                height: 400px;
+                display: flex;
+
+                flex-direction: row;/*row, row-reverse, column, column-reverse*/
+                flex-wrap: nowrap;/*nowrap(itens em linha), wrap(itens quebram a linha), wrap-reverse*/
+                justify-content: flex-start;/*flex-start(topo-esquerda), flex-end(topo-direita), center(horizontal), 
+                space-between(ocupa a linha toda com espaçamento igual entre os itens exceto os das extremidades), 
+                space-around(ocupa a linha toda com espaçamento igual entre os itens)*/
+                align-items: stretch;/*stretch(ocupa a altura toda), center(vertical), 
+                flex-start(topo-esquerda), flex-end(fundo-esquerda), baseline(segue o alinhamento da linha dos textos) 
+                */
+            }
+            .item{
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+                background: white;
+                border: 1px solid gainsboro;
+                flex-grow: 0;/*define a proporção de espaço ocupada por um item*/
+                flex-shrink: 1;/*define a capacidade de redução de tamanho de um item*/
+                flex-basis: 200px;/*indica o tamanho inicial do flex item*/
+            }
+            .item1{
+                flex-shrink: 5;
+            }
+            /*.ordem1{
+                order: 1;
+            }
+            .ordem2{
+                order: 2;
+            }
+            .ordem3{
+                order: 3;
+            }
+            .ordem4{
+                order: 4;
+            }*/
+        </style>
+
+    </head>
+    <body>
+        <h1>Flexbox</h1>
+        <div id="conteudo">
+            <div class="item item1">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+        </div>
+    </body>
+</html>

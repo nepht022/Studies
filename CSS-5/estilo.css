@@ -1,0 +1,93 @@
+/*Border Radius - Box Sizing*/
+#caixa{
+    width: 300px;
+    height: 300px;
+    background: #b9c941;
+    padding: 50px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+/*ao adicionar padding, o valor é acrescentado a largura e altura definidas
+ao usar boz-sizing: border-box, o valor do padding é adicionado mas a largura e altura nao passam do definido anteriormente*/
+#caixa2{
+    width: 300px;
+    height: 300px;
+    background: #b9c941;
+    box-sizing: border-box;
+}
+img{
+    border-radius: 150px;
+}
+
+/*Degrade*/
+#degrade-caixa{
+    width: 300px;
+    height: 300px;
+    /*background: url("Imagens/camera.png");*/
+    /*background: linear-gradient(to right,purple, lightblue);*//*gradiante linear*/
+    background: radial-gradient(purple, lightblue);/*gradiante pro centro*/
+}
+#degrade-caixa h1{
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/*Sombra*/
+#sombra-caixa{
+    width: 300px;
+    height: 300px;
+    padding: 8px;
+    margin: 20px;
+    background: #009670;
+    box-shadow: 10px 10px 2px 5px rgba(0, 0, 0, 0.8);/*valores: horizontal, vertical, blur, espalhamento, cor*/
+
+}
+#sombra-caixa h1{
+    color: white;
+    text-shadow: 10px 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+/*Animações*/
+@keyframes animacao-caixa{
+    from{
+        background: red;
+        border-radius: 0px;
+        top: 0;
+        left: 0;
+    }
+    to{
+        background: green;
+        border-radius: 300px;
+        top: 200px;
+        left: 200px;
+    }
+}
+
+#animacoes-caixa{
+    width: 300px;
+    height: 300px;
+    background: red;
+    position: relative;
+
+    animation-name: animacao-caixa;/*nome da animacao*/
+    animation-duration: 3s;/*duracao da animacao*/
+    animation-delay: 2s;/*tempo ate começar a animacao*/
+    animation-iteration-count: 3;/*vezes que sera realizada a animacao*/
+    animation-direction: alternate;/*forma que sera feita a animacao*/
+
+    /*animation: animacao-caixa 3s 1s 3 alternate; tudo junto*/
+}
+
+/*Transições*/
+#transicoes-caixa{
+    width: 300px;
+    height: 300px;
+    background: orange;
+
+}
+#transicoes-caixa:hover{
+    margin-left: 100px;
+    width: 400px;
+    height: 400px;
+    background: rgb(120, 214, 11);
+    transition: all 2s;
+}
