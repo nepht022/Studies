@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <title>Javascript</title>
+    <script>
+        var video = Array()
+        video[1] = Array()
+        video[1]["Nome"] = "Fullmetal Alchemist"
+        video[1]["Categoria"] = "Anime"
+
+        function getVideo(video){
+            try{
+                console.log(video[0]["Nome"])
+            } catch(e){
+                trataErro(e)
+                console.log("É possível o tratamento de Erro")
+            } finally{
+                console.log("Passou pelo Finally")
+            }
+        }
+
+        function trataErro(erro){
+            console.log(erro)
+        }
+
+        getVideo(video)
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

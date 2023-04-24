@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <title>BOM</title>
+    <script>
+        var janela = ''
+
+        function abrirPopup(){
+             janela = window.open('http://www.google.com.br', 'Google', 'width=600, height=400')
+        }
+        function fecharPopup(){
+            janela.close()
+        }
+
+
+        var altura = window.screen.availHeight
+        var largura = window.screen.availWidth
+
+
+        var i = 10
+        setTimeout(function(){document.write('Teste'+"<br><br>")}, 1000)
+
+        var interval = setInterval(function(){
+            document.write(i+"<br>")
+            i--
+            if(i === -1){
+                clearInterval(interval) //window.location.reload() da reload na pagina
+            }
+        }, 2000)
+    </script>
+  </head>
+  <body>
+    <button onclick="abrirPopup()" type="button">Abrir Janela</button>
+    <button onclick="fecharPopup()" type="button">Fechar Janela</button>
+
+    <button onclick="window.location.href='http://www.google.com' " type="button">Acessar Google</button>
+    <button onclick="window.location.href='http://www.twitch.com' " type="button">Acessar Twitch</button>
+  </body>
+</html>

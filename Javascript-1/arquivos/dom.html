@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <title>Javascript</title>
+
+    <script>
+      function verificaChar(){
+        var character = document.getElementById("char").value
+        document.getElementById("char").value = ''
+        
+        switch(character){
+          case "0":
+          case "1":
+          case "2":
+          case "3":
+          case "4":
+          case "5":
+          case "6":
+          case "7":
+          case "8":
+          case "9":
+            document.getElementById("numeros").value += character
+            break;
+
+          default:
+            document.getElementById("letras").value += character
+            break;
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <input onkeyup="verificaChar()" type="text" name="texto" placeholder="Digite algo" id="char"><br><br>
+    <label for="numero">Numero</label>
+    <input type="text" name="numero" id="numeros" disabled>
+    <label for="letra">Letra</label>
+    <input type="text" name="letra" id="letras" disabled>
+  </body>
+
+  <script>
+    //console.log(document.getElementById("nome_usuario"))
+    //console.log(document.getElementsByTagName("input"))
+    //console.log(document.getElementsByClassName("campo_usuario"))
+    //console.log(document.getElementsByName("nome"))
+  </script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <title>Seila</title>
+
+    <script>
+        var objetos = Array('Cadeira', 'Impressora', 'Garfo')
+
+        function addElemento(){
+            var obj = document.getElementById('texto').value
+            if(obj==''){
+                alert('Informe um valor válido')
+            }else{
+                if(objetos.indexOf(obj) != -1){
+                    alert('Objeto já adicionado')
+                }else{
+                    objetos.push(obj)
+                    console.log(objetos)
+                    document.getElementById('texto').value = ''
+                }
+            }
+        }
+
+        function ordLista(){
+            objetos.sort()
+            console.log(objetos)
+        }
+    </script>
+  </head>
+
+  <body>
+    <input id="texto" type="text">
+    <button onclick="addElemento()" type="button">Adicionar</button>
+    <button onclick="ordLista()" type="button">Ordenar</button>
+  </body>
+</html>
