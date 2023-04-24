@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>var_let</title>
+
+    <script>
+        //uma var, ao ser criada, sobe um nivel no escopo, se ta numa função, vai pro global
+        //uma let, continua no escopo que foi criada
+        //uma const deve ser declarada toda em maiusculo, nao pode ter seu valor alterado e continua no escopo que foi criada
+
+        let filme = "Indiana Jones"
+        {
+          let filme = "Curupira"
+          console.log(filme)
+        }
+        console.log(filme)
+    </script>
+
+  </head>
+  <body>
+
+  </body>
+</html>

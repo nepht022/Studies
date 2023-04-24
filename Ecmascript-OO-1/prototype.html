@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>Prototype</title>
+    <script>
+        //Aviao
+        //Função Literal
+        let a1 = {
+            cor: 'Amarelo',
+            modelo: 'Jipe',
+
+            levantarVoo(){
+                console.log('Levantando voo...')
+            }
+        }
+
+        //Função Construtora
+        let AviaoF = function(){
+            this.cor = 'Azul'
+            this.modelo = 'Boing 224'
+
+            this.levantarVoo = function(){
+                console.log('Levantando voo...')
+            }
+        }
+        let a2 = new AviaoF()
+
+        //Classe
+        class AviaoC{
+            constructor(){
+                this.cor = 'Vermelho'
+                this.modelo = 'Chevrolet'
+            }
+
+            levantarVoo(){
+                console.log('Levantando voo...')
+            }
+        }
+        let a3 = new AviaoC()
+
+        console.log(a1)
+        console.log(a2)
+        console.log(a3)
+
+//-------------------------------------------------------------------------------------------------------------------------//
+        
+        //todos prototypes sao herdados de object
+        Object.prototype.atr50='d' //Global para a aplicação
+        let animal = {
+            atr1: 'a'
+        }
+        let vertebrado = {
+            __proto__: animal,
+            atr2: 'b'
+        }
+        let ave = {
+            __proto__: vertebrado,//semelhante a herança
+            atr3: 'c'
+        }
+
+        console.log(ave.atr2, ave.atr1, ave.atr3, ave.atr50)
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>Objeto Literal 2</title>
+    <script>
+       let nome = "Rodrigo"
+       let idade = 22
+       let sexo = "Masculino"
+       let profissao = "Estudante"
+
+       let objeto = {
+        nome: nome,
+        idade: idade,
+        sexo: sexo,
+        profissao: profissao,
+        exibirResumo: function(){
+            console.log(`${this.nome}-${this.idade}-${this.sexo}-${this.profissao}`)
+        }
+       }
+       console.log(objeto)
+       objeto.exibirResumo()
+
+       let objeto2 = { // objeto literal melhorado
+        nome,
+        idade,
+        sexo,
+        profissao,
+        exibirResumo(){
+            console.log(`${this.nome}-${this.idade}-${this.sexo}-${this.profissao}`)
+        }
+       }
+       console.log(objeto2)
+       objeto2.exibirResumo()
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

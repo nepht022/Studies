@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>Função Construtora</title>
+    <script>
+        let Carro = function(){
+            this.cor = 'Cinza'
+            this.modelo = 'Fusca'
+            this.velAtual = 0
+            this.velMax = 120
+
+            this.getVelAtual = function(){
+                return this.velAtual
+            }
+            this.setVelAtual = function(novaVel){
+                this.velAtual=novaVel
+            }
+            this.acelerar = function(){
+                this.setVelAtual(this.getVelAtual()+10)
+            }
+        }
+
+        let c1 = new Carro()
+        c1.acelerar()
+        console.log(c1.getVelAtual())
+
+
+        let Carro2 = function(){
+            this.cor = 'Cinza' //publico
+            this.modelo = 'Fusca'
+            this.velAtual = 0
+            var velMax = 120//privado, protegido
+            var kmRodados = 0
+
+            this.getVelAtual = function(){
+                return this.velAtual
+            }
+            this.setVelAtual = function(novaVel){
+                this.velAtual=novaVel
+            }
+            this.acelerar = function(){
+                this.setVelAtual(this.getVelAtual()+10)
+                if(this.velAtual > velMax){
+                    this.velAtual = velMax
+                }
+                setKmRodados(0.01)
+            }
+
+            var setKmRodados = function(km){
+                kmRodados += km
+            }
+        }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

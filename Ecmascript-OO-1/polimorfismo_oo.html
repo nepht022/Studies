@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>polimorfismo</title>
+    <script>
+        class Animal{
+            constructor(cor, tamanho, peso){
+                this.cor = cor
+                this.tamanho = tamanho
+                this.peso = peso
+            }
+            dormir(){
+                console.log('Dormir')
+            }
+        }
+
+        class Passaro extends Animal{
+            constructor(bico, cor, tamanho, peso){
+                super(cor, tamanho, peso)
+                this.bico = bico
+            }
+
+            voar(){
+                console.log('Voar')
+            }
+        }
+
+        class Papagaio extends Passaro{
+            constructor(fala, cor, tamanho, peso){
+                super('Medio', cor, tamanho, peso)
+                this.fala = fala
+            }
+
+            falar(){
+                console.log('Falar')
+            }
+        }
+
+        class Avestrus extends Passaro{
+            constructor(cor, tamanho, peso){
+                super('Pequeno', cor, tamanho, peso)
+            }
+
+            enterrarCabeca(){
+                console.log('Enterrar Cabeça')
+            }
+            
+            voar(){
+                console.log('Planar')
+            }
+        }
+
+        let p1 = new Papagaio(true, 'Amarelo', 20, 55)
+        console.log(p1.voar())
+
+        let a1 = new Avestrus('Branco', 200, 550)
+        console.log(a1.voar())
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

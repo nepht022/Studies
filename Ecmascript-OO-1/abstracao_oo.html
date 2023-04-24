@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>abstracao</title>
+
+    <script>
+        class ContaBancaria{
+            constructor(){
+                this.agencia = 1235
+                this.conta = 8875
+                this.saldo = 500
+                this.limite = 2000
+            }
+
+            depositar(valor){
+                this.saldo+=valor
+            }
+            sacar(valor){
+                this.saldo-=valor
+            }
+            verSaldo(){
+                return this.saldo
+            }
+        }
+
+        let conta1 = new ContaBancaria
+        console.log(conta1.verSaldo())
+
+
+
+        class Cadeira{
+            constructor(qtdPernas=4, giratoria=false, cor='preta'){
+                this.qtdPernas = qtdPernas
+                this.giratoria = giratoria
+                this.cor = cor
+            }
+
+            girarCadeira(){
+                if(this.giratoria==true){
+                    console.log("Girou")
+                }else{
+                    console.log("Cadeira não giratória")
+                }
+            }
+        }
+        let c1 = new Cadeira(2, true, 'cinza')
+        let c2 = new Cadeira(1, false, 'azul')
+
+        let cadeiras = Array()
+        cadeiras.push(c1, c2)
+
+        console.log(cadeiras)
+    </script>
+
+  </head>
+  <body>
+
+  </body>
+</html>

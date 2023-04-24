@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>Função Factory</title>
+    <script>
+        let Bicicleta1 = {
+            cor: 'branca',
+            aro: 12,
+            marcha: 1,
+            pedalar(){
+                console.log('Pedalando...')
+            }
+        }
+
+        let BicicletaFactory = function(cor, marcha, aro){
+            return{
+                cor,
+                aro,
+                marcha,
+                pedalar(){
+                    console.log('Pedalando...')
+                }  
+            }
+        }
+        let Bicicleta2 = BicicletaFactory('Vermelha', 4, 15)
+        console.log(Bicicleta2.pedalar())
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

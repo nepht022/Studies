@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>Objeto Literal</title>
+    <script>
+        class Produto{
+            constructor(preco, descricao){
+                this.preco = preco
+                this.descricao = descricao
+            }
+
+            verDescricao(){
+                console.log(`${this.descricao} - R$${this.preco}`)
+            }
+        }
+        let p1 = new Produto(22, '2 duzias de banana')
+        p1.verDescricao()
+
+        let p1Literal = { // static, nao precisa ser instanciado, objeto unico
+            preco: 11.99,
+            descricao: '4 Aboboras',
+            verDescricao: function(){console.log(`${this.descricao} - R$${this.preco}`)}
+        }
+        p1Literal.preco = 15.49 //re-atribuiçao de valor
+        p1Literal.validade = '12 de julho'//adicionando um atributo
+        p1Literal.exibirMarca = () => console.log('Nestle')//adicionando um metodo
+
+        console.log(p1Literal)
+        p1Literal.verDescricao()
+
+        console.log(p1Literal.descricao)
+        let x = p1Literal // o valor nao foi duplicado, apenas referenciado
+        console.log(x.descricao)
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
