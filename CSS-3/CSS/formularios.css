@@ -1,0 +1,27 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width:100%;
+}
+fieldset{
+    padding: 1em;
+    width:40%;
+    margin-bottom: 2em;
+}
+legend{
+    font-weight: bolder;
+}
+label{
+    display: block;
+    cursor: pointer;/*o mouse muda para algo clicavel*/
+}
+input.texto{/*[type="text"] só se aplica para os inputs com type=text*/
+    width: 70%;
+    margin-bottom: 1em;
+}
+textarea{
+    width: 70%;
+    height: 10em;
+}
+.radios{
+    margin:0 1em 0.5em 0;
+}

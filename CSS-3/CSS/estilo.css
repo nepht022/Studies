@@ -1,0 +1,46 @@
+/**** Seletor Universal ***
+*{
+    border:1px solid rgb(0, 0, 0);
+}*/
+
+/**** Seletor De Texto ****/
+h1{
+    color:aqua;
+}
+
+/**** Seletor De Classe ****/
+.verde{
+    color:green;
+}/*p.verde{} aplica a cor verde somente a paragrafos*/
+
+/**** Seletor De ID****/
+#borda{
+    border:1px solid blueviolet;
+}
+
+/**** Seletor De Filhos****/
+li > a{
+    color:red;
+    text-decoration: none;
+    font-weight: bold;
+}/*só aplica os estilos quando tiver um "a" diretamente filho de um "li", um depois do outro, sem nenhuma tag entre eles*/
+
+/**** Seletor De Descendente***
+body p{
+    color:yellow;
+    font-weight: bold;
+}*//*Aplica os estilos quando tiver um "a" dentro de um "li, independendo de ter tags entre eles*/
+
+/**** Seletor De Irmao Adjascente****/
+h1+p{
+    color:coral;
+}/*aplica o estilo ao primeiro elemento depois de todos "h1" caso o mesmo seja "p"*/
+
+/**** Seletor De Irmao Geral****/
+h1~p{
+ color:darkmagenta;
+}/*aplica o estilo a todo "p" diretamente depois de um "h1"*/
+/*
+.pagina p = aplica o estilo para todos p dentro da classe pagina
+p.pagina = aplica o estilo para todos p que tem uma classe pagina
+*/
