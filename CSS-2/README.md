@@ -1,6 +1,6 @@
 # CSS Estudo 2
 
-<P>Elemento Display</P> 
+###Elemento Display
 [Clique AQUI para acessar](https://nepht022.github.io/studies/CSS-2/ele-display.html)
 <br>
 <P>Elemento Float</P> [Clique AQUI para acessar](https://nepht022.github.io/studies/CSS-2/ele-float.html)<br>
