@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Elementos Flutuantes</title>
+        <meta charset="utf-8">
+        
+        <style type="text/css">
+            #principal{
+                background: greenyellow;
+                border:5px solid red;
+                width:500px;
+                height:500px;
+            }
+            .conteudo{
+                background: rgb(16, 223, 212);
+                width:200px;
+                height:200px;
+                border:1px solid rgb(245, 245, 245); 
+                margin: 10px;
+                float: left; /*faz o conteudo flutuar para um local, podendo ficar acima de outro, semelhante ao display: inline-block;*/
+            }
+            .clear{
+                clear:both; /*limpa o float de um elemento, impede ele de flutuar*/
+                /*o fluxo precisa ser limpado para as configurações de uma div que engloba todas(principal) as divs que usam float(conteudo) serem aplicadas*/
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div id="principal">
+            <div class="conteudo">
+                Conteudo 1
+            </div>
+            <div class="conteudo">
+                Conteudo 2
+            </div>
+            <div class="conteudo">
+                Conteudo 3
+            </div>
+
+            <div class="clear"></div>
+        </div>
+
+    </body>
+</html>

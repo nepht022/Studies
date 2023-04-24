@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sobreposição de Elementos</title>
+        <meta charset="utf-8">
+
+        <style type="text/css">
+
+            .cont1{
+                border:1px solid red;
+                background: orange;
+                width:200px;
+                height:200px;
+                position:absolute;
+                z-index: 1;/*define o posicionamento do elemento quanto maior o valor, mais acima*/
+            }
+            .cont2{
+                border:1px solid red;
+                background: greenyellow;
+                width:200px;
+                height:200px;
+                position:absolute;
+                top:40px;
+                left:40px;
+                z-index: 2;/*define o posicionamento do elemento quanto maior o valor, mais acima*/
+            }
+            .cont3{
+                border:1px solid red;
+                background: rgb(93, 22, 207);
+                width:200px;
+                height:200px;
+                position:absolute;
+                top:80px;
+                left:80px;
+                z-index: 0;/*define o posicionamento do elemento quanto maior o valor, mais acima*/
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <div class="cont1">
+            Conteudo1
+        </div>
+        <div class="cont2">
+            Conteudo2
+        </div>
+        <div class="cont3">
+            Conteudo3
+        </div>
+
+    </body>
+</html>

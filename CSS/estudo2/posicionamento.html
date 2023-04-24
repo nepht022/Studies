@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Posicionamento</title>
+        <meta charset="utf=8">
+        
+        <style type="text/css">
+
+            body{
+                background: #007fc7;
+            }
+            h1{
+                margin-top:0px;
+                /*position: static; é o padrao*/
+            }
+            p{
+                width:300px;
+            }
+            .relative{
+                border: 1px solid red;
+                position: relative;/*posição baseada na caixa do <P>*/
+                top: 20px;/*se movimenta 20px da parte de cima inicial da caixa do paragrafo pra baixo*/
+                left: 20px;/*se movimenta 20px da parte da esquerda inicial da caixa do paragrafo pra direita*/
+            }
+            .absolute{
+                border: 1px solid red;
+                position: absolute;/*sai da ordem padrao, posição baseada no container se nao tiver posição static ou no body se tiver.*/
+                top: 0px;/*vai pro pixel 0 do topo*/
+                right: 20px;/*vai pro pixel 20 a partir do 0 da direita*/
+            }
+            .fixed{
+                border: 1px solid red;
+                position: fixed;/*sai da ordem padrao, posição baseada na tela, ao rolar a pagina, fica sempre aparecendo*/
+                top: 0px;/*vai pro pixel 0 do topo*/
+                right: 20px;/*vai pro pixel 20 a partir do 0 da direita*/
+            }
+
+            #container{
+                background: #fff;
+                width:800px;
+                margin:10px auto;
+                padding:10px;
+                position:relative;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <div id="container">
+            <h1>XXXX</h1>
+            <p>P1 combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+            <p class="relative">P2 combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+            <p>P3 combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>       
+        </div>
+
+    </body>
+</html>

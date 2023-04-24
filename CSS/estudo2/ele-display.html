@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<!--block: ocupa a largura da tela e fica um abaixo do outro
+inline: ocupa a largura do elemento pelo que ta dentro dele e fica um depois do outro
+inline-block: ocupa a largura do elemento pelo que ta dentro dele e fica um do lado do outro caso caiba ou abaixo caso não-->
+
+<html>
+    <head>
+        <title>Elementos Display</title>
+        <meta charset="utf=8">
+        
+        <style type="text/css">
+
+            .borda{
+                border:2px solid red;
+            }
+
+            .inline-block{
+                border:2px solid red;
+                display: inline-block;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <span class="borda">INLINE1</span>
+        <span class="borda">INLINE2</span>
+
+        <h1 class="borda">BLOCK1</h1>
+        <h1 class="borda">BLOCK2</h1>
+
+        <span class="inline-block">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</span><!--Elemento inline-->
+        <span class="inline-block">INLINE-BLOCK</span>
+
+    </body>
+</html>
