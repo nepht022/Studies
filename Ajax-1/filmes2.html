@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Filmes 2 Json</title>
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">	
+        <script src="xmltojson.js"></script>
+        <script>
+            function getFilmes(){
+                let xmlHttp = new XMLHttpRequest();
+                xmlHttp.open('get', 'http://localhost/ajax/filmes.json');
+
+                xmlHttp.onreadystatechange = function(){
+                    if(xmlHttp.status == 200 && xmlHttp.readyState == 4){
+                        let jsonFilmes = xmlHttp.responseText;
+                        let objJsonFilmes = JSON.parse(jsonFilmes);
+
+                        //le o arquivo json e pra cada filme cria uma estrutura a partir do js na tela
+                        for(let i in objJsonFilmes.filmes){
+                            let item = objJsonFilmes.filmes[i];
+
+                            let divRow = document.createElement('div');
+                            divRow.className = 'row';
+
+                            let divCol = document.createElement('div');
+                            divCol.className = 'col';
+
+                            let p1 = document.createElement('p');
+                            p1.innerHTML = '<strong>Titulo: </strong>'+ item.titulo;
+                            let p2 = document.createElement('p');
+                            p2.innerHTML = '<strong>Resumo: </strong>'+ item.resumo
+
+                            let generos = ''
+                            for(let g in item.generos){
+                                if(generos){
+                                    generos+=', ';
+                                }
+                                generos+= item.generos[g].genero;
+                            }
+                            let p3 = document.createElement('p');
+                            p3.innerHTML = '<strong>Genero: </strong>'+ generos
+
+                            let elenco = ''
+                            for(let e in item.elenco){
+                                if(elenco){
+                                    elenco+=', ';
+                                }
+                                elenco+= item.elenco[e].ator;
+                            }
+                            let p4 = document.createElement('p');
+                            p4.innerHTML = '<strong>Elenco: </strong>'+ elenco
+                            let p5 = document.createElement('p');
+                            p5.innerHTML = '<strong>DataDeLançamento: </strong>'+ item.dataLancamento.pais +', '+ item.dataLancamento.data
+
+                            let hr = document.createElement('hr');
+
+                            divRow.appendChild(divCol);
+                            divCol.appendChild(p1);
+                            divCol.appendChild(p2);
+                            divCol.appendChild(p3);
+                            divCol.appendChild(p4);
+                            divCol.appendChild(p5);
+                            divCol.appendChild(hr);
+
+                            document.getElementById('lista').appendChild(divRow);
+
+                        }
+                    }
+                    
+                    if(xmlHttp.status == 404 && xmlHttp.readyState == 4){
+                        console.log('ERROR!!');
+                    }
+                }
+                xmlHttp.send();
+            }
+        </script>
+    </head>
+
+	<body>
+        <nav class="navbar navbar-light bg-light mb-4">
+            <div class="container">
+                <div class="navbar-brand mb-0 h1">
+                    <h3>Catálogo de Filmes</h3>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container" id="lista">
+            <div class="row mb-4">
+                <div class="col">
+                    <button class="btn btn-info" type="submit" onclick="getFilmes()">Listar Filmes</button>
+                </div>
+            </div>
+            
+        </div>
+	</body>
+</html>
