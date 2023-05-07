@@ -1,0 +1,61 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Recuperando Atributos</title>
+        <!--<script src="jquery-3.6.4.min.js"></script>-->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>      
+        <script>
+            $(document).ready(function(){
+                $('img').attr('src', 'esfera_2.png')//atualiza os valores dos atributos da tag
+                $('img').attr('border', 10);
+                $('body').attr('style', 'background:blue');
+
+                console.log($('#div1').html());//pega oque esta descrito dentro do id=div1
+                console.log($('#div2').html('<strong>Substituindo o conteudo dentro da "div"</strong>'));
+            
+                console.log($('#nome').val('Freire'))//pega o valor no campo de id=nome e substitui
+
+                console.log($('.sexo:checked').val())//retorna o valor checado, val() só retorna o primeiro valor
+                $.each($('.interesse:checked'), function(indice, valor){//para cada valor checked do radio com class=interesse, faz algo
+                    console.log(indice, valor.value);
+                })
+            })
+        </script>
+    </head>
+    <body style="background:white">
+        <img src="esfera_1.png" border="5">
+
+        <div id="div1" style="border: solid 1px white; width: 150px; height: 150px; color: white; font-weight: bold;">
+            <a href="#" style="color:white">Hyperlink</a>
+            <p>Olá</p>
+        </div>
+        <div id="div2" style="border: solid 1px white; width: 150px; height: 150px; color: white; font-weight: bold;">
+            Div 2
+        </div>
+
+        <div id="perguntas">
+            <p>Nome:</p>
+            <input type="text" id="nome" value="Rodrigo"><br>
+
+            <p>Onde nos escontrou?</p>
+            <select id="origem">
+                <option value="">-------------</option>
+                <option value="1">Facebook</option>
+                <option value="2">Twitter</option>
+                <option value="3">Instagram</option>
+            </select>
+
+            <p>Sexo:</p>
+            <input type="radio" name="sexo" class="sexo" value="F" checked>Feminimo<br>
+            <input type="radio" name="sexo" class="sexo" value="M">Masculino<br>
+
+            <p>Interesses:</p>
+            <input type="checkbox" name="interesse" class="interesse" value="PHP" checked>PHP<br>
+            <input type="checkbox" name="interesse" class="interesse" value="Java">Java<br>
+            <input type="checkbox" name="interesse" class="interesse" value="Python">Python<br>
+            <input type="checkbox" name="interesse" class="interesse" value="Javascript" checked>Javascript<br><br>
+
+            <button type="submit">Enviar</button>
+        </div>
+    </body>
+</html>

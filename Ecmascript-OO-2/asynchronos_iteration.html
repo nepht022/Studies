@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            let processos = [1, 2, 3, 4, 5]
+            let asyncIteration = async () => {
+                for(let x in processos){
+                    await new Promise((resolve, reject)=>{
+                        setTimeout(()=>{
+                            console.log('Processamento Assincrono '+processos[x])
+                            resolve()
+                        }, 2000)
+                    })  
+                    console.log(processos[x])
+                }
+                return 'Fim'
+            }
+            asyncIteration().then(param=>console.log(param))
+        </script>
+    </body>
+</html>

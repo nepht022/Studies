@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    </body>
+    
+    <script>
+        class Pessoa{
+            #humor = null//atributo privado
+            #mensagem = [
+                'Seja feliz!',
+                'Não estou para conversa hoje'
+            ]
+
+            constructor(nome){
+                this.#mudarHumor()//o metodo precisa ser chamado no cosntrutor pra ser usado fora da classe
+                this.nome = nome//atributo publico
+            }
+
+            dizerOi(){
+                return `Olá, ${this.nome} é o meu nome!`
+            }
+            getHumor(){
+                return this.#humor
+            }
+            getMensagem(){
+                return this.#mensagem[this.#humor]
+            }
+
+            #mudarHumor(){
+                this.#humor = Math.floor(Math.random()*2)
+            }
+        }
+
+        let p1 = new Pessoa('Rodrigo')
+        console.log(p1.dizerOi())
+        console.log(p1.getHumor())
+    </script>
+</html>

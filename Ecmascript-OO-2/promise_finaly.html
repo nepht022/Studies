@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            let p = new Promise((resolve, reject)=>{
+                if(false){
+                    reject('Rejeitada')
+                }
+                resolve('Resolvida')
+            })
+            .then((resolvida)=>{
+                console.log(resolvida)
+            })
+            .catch((rejeitada)=>{
+                console.log(rejeitada)
+            })
+            .finally(()=>{
+                console.log('Fluxo finalizado.')
+            })
+        </script>
+    </body>
+</html>

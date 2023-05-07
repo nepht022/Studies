@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <body></body>
+    <script type="module">//type precisa ser usado para importar
+        import {saudacao, getEnderecoByCep} from './lib.mjs'
+        console.log(saudacao())
+
+        getEnderecoByCep('25520171')
+            .then(dados => console.log(dados))
+    </script>
+</html>

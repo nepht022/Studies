@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    </body>
+    
+    <script>
+        const p1 = new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve('P1 resolvida')
+            }, 3000)
+        })
+        const p2 = new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                reject('P2 rejeitada')
+            }, 2000)
+        })
+        const p3 = new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve('P3 resolvida')
+            }, 4000)
+        })
+        Promise.any([p1, p2, p3])
+            .then((resolvida)=>{//retorna a promise que foi resolvida em menos tempo
+                console.log(resolvida)
+            })
+            .catch((erro)=>{//retorna erro se nenhuma promise foi resolvida
+                console.log(erro)
+            })
+
+    </script>
+</html>

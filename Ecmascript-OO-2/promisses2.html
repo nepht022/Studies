@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            let promessa = new Promise((resolve, reject) => {
+                try{
+                    setTimeout(function(){
+                        let resposta = {}
+                        if(false){
+                            resposta = {
+                                codigo: 1050,
+                                erro: 'Falha na autorizacao'
+                            }
+                            reject(resposta)
+                        }
+
+                        resposta = {
+                            0: {id: 1, nome: 'Joao'},
+                            1: {id: 2, nome: 'Jose'},
+                            2: {id: 3, nome: 'Maria'}
+                        }
+                        resolve(resposta)
+
+                    }, 4000)
+                }catch(e){
+                    
+                }
+            }).then(dados => {
+                console.log(dados)
+                let promessa2 = new Promise((resolve, reject)=>{
+                    setTimeout(function(){
+                        let resposta = {}
+                        if(false){
+                            resposta = {
+                                codigo: 7788,
+                                erro: 'Erro ao recuperar os posts dos usuarios'
+                            }
+                            reject(resposta)
+                        }
+
+                        resposta = {
+                            0: {id: 1, usuario_id: 1, posts: [{id_post: 1, post: 'post1'}, {id_post: 2, post: 'post2'}]},
+                            1: {id: 2, usuario_id: 2, posts: [{id_post: 3, post: 'post1'}, {id_post: 4, post: 'post2'}]},
+                            2: {id: 3, usuario_id: 3, posts: [{id_post: 5, post: 'post1'}, {id_post: 6, post: 'post2'}]}
+                        }
+                        resolve(resposta)
+                    }, 4000)
+                }).then(dados=>{
+                    console.log('Promise 2,', dados)
+                }).catch(erro=>{
+                    console.log('Erro, ', erro)
+                })
+            }).then(param=>{
+                console.log('Then 2,',param)
+            }).then(()=>{
+                console.log('Then 3')
+            }).catch(erro => {
+                console.log('Operacao sequencial(catch): ', erro)
+                return 'Param capturado no Catch e enviado pro Then 4'
+            }).then(param=>{
+                console.log('Then 4,', param)
+            }).then(()=>{
+                console.log('Then 5')
+            })
+        </script>
+    </body>
+</html>

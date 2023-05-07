@@ -1,0 +1,32 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Inserindo e removendo elementos</title>
+        <!--<script src="jquery-3.6.4.min.js"></script>-->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>      
+        <script>
+            $(document).ready(function(){
+                $('#lista1').append('<li> Item 4 </li>')//adiciona um elemento no final da lista1
+                $('#lista2').prepend('<div> Item 0 </div>')//adiciona no inicio
+                $('#lista2').after('<h2> Inserido após a div </h2>')//adiciona um elemento após a lista2
+                $('#lista1').before('<h2> Inserido antes da ul </h2>')//adiciona antes de ul
+                $(".li2").remove();//remove um item
+            })
+        </script>
+    </head>
+    <body>
+        <ul id="lista1">
+            <li>Item 1</li>
+            <li class="li2">Item 2</li>
+            <li>Item 3</li>
+        </ul>
+
+        <div id="lista2">
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+        </div>
+
+        <hr>
+    </body>
+</html>

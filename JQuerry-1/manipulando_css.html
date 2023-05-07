@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Manipulando CSS</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<style>
+			.campo{
+				background: #ddd;
+				border: none;
+				padding: 10px;
+			}
+			.padrao{
+				background: red;
+			}
+		</style>
+		<script>
+			$(document).ready(function(){
+				console.log($('#topo'))
+				$('#topo').css({'background':'#155661', 'padding':'10px'})
+				$('input').addClass('campo')//adiciona uma classe css a um campo
+				console.log($('input').hasClass('campo'))
+				$('textarea').addClass('padrao')
+				$('textarea').removeClass('padrao')
+			})
+		</script>
+	</head>
+	<body>
+		<div id="topo">
+			<h1>Barra de navegação da aplicação</h1>
+		</div>
+
+		<div>
+			<h3>Contato</h3>
+			<hr />
+
+			<p>Nome:</p>
+			<input type="text" />
+			<br />
+
+			<p>Email:</p>
+			<input type="text" />
+			<br />
+
+			<p>Mensagem:</p>
+			<textarea></textarea>
+			<br />
+
+			<button type="button">Enviar</button>
+		</div>
+	</body>
+
+</html>

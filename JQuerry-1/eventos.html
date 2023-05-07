@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Eventos</title>
+		<style>
+			#divExterna{
+				background: #ddd;
+				width: 80px;
+				height: 80px;
+			}
+			.inputFocado{
+				background: red;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function(){
+				$('#onload').html('Página carregada')
+
+				$(window).scroll(function(){
+					$('#scroll').html('Scroll acionado')//faz algo ao usar o scroll
+				})
+
+				$(window).resize(function(){
+					$('#window').html("Diminuiu o tamanho da tela")
+				})
+
+				$('#discoteca').scroll(function(){
+					let r = Math.round(Math.random()*256)
+					let g = Math.round(Math.random()*256)
+					let b = Math.round(Math.random()*256)
+
+					$(this).css({'background-color':'rgb('+r+','+g+','+b+')'})
+				})
+			})
+
+			$(document).ready(function(){
+				$('#btn1').mousedown(function(){//ao pressionar
+					$('#quadrado').css({'background':'green'})
+				})
+				$('#btn1').mouseup(function(){//ao parar de pressionar
+					$('#quadrado').css({'background':'blue'})
+				})
+
+				$('#btn2').click(function(){//ao clicar uma vez
+					$('#quadrado').css({'background':'yellow'})
+				})
+				$('#btn2').dblclick(function(){//ao dar um double click
+					$('#quadrado').css({'background':'black'})
+				})
+
+				$('#quadrado').mousemove(function(e){//ao passar o mouse sobre
+					$('#resultado').html('X: '+e.screenX+' || Y: '+e.screenY)
+				})
+			})
+
+			$(document).ready(function(){
+				$('#divExterna').mouseenter(function(){//ao entrar com o mouse
+					$('#resultadoDivExt').html("Entrou")
+				})
+				$('#divExterna').mouseleave(function(){//ao sair com o mouse
+					$('#resultadoDivExt').html("Saiu")
+				})
+			})
+
+			$(document).ready(function(){
+				$('#teclado').keydown(function(e){//ao pressionar a tecla
+					$('#resultadoTeclado').html('Tecla pressionada: '+e.keyCode)
+				})
+				$('#teclado').keyup(function(e){//ao soltar a tecla
+					$('#resultadoTeclado').html('Tecla liberada:')
+					if(e.keyCode==13){
+						$('#resultadoTeclado').html($(e.target).val())
+						$(e.target).val('')
+					}
+				})
+			})
+
+			$(document).ready(function(){
+				$("#nome, #email").focus(function(e){//ao clicar no campo de texto
+					console.log("Um campo RECEBEU o foco")
+					$(e.target).addClass('inputFocado')
+				})
+				$("#nome, #email").blur(function(e){//ao clicar fora do campo de texto
+					console.log("Um campo PERDEU o foco")
+					$(e.target).removeClass('inputFocado')
+				})
+
+				$('#opcao').change(function(e){//ao mudar a opção
+					console.log($(e.target).val())
+				})
+				$('form').submit(function(e){//ao clicar no botao de enviar
+					e.preventDefault()//previne o refresh/redirecionamento da pagina
+					console.log('Formulario enviado')
+				})
+			})
+		</script>
+	</head>
+	<body>
+		
+		<div id="topo">
+			<h1>Eventos</h1>
+		</div>
+
+		<div>
+			<h3>Browser</h3>
+			<span>Onload: </span><span id="onload">?</span><br />
+			<span>Scroll: </span><span id="scroll">?</span><br />
+			<span>Resize Window: </span><span id="window">?</span>
+			<div id="discoteca" style="height: 100px; width: 100px; border: 2px solid black; overflow-y: scroll;">
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			</div>
+			<hr />
+
+			<h3>Mouse</h3>
+			<button id="btn1" type="button">Clique aqui</button>
+			<button id="btn2" type="button">Clique aqui 2x</button>
+			<div id="quadrado" style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px"></div>
+			<span>Resultado do evento sobre a div </span><span id="resultado"></span>
+			<div id="divExterna"></div>
+			<span>Div externa </span><span id="resultadoDivExt">?</span><br>
+			<hr />
+
+			<h3>Teclado</h3>
+			<span>Nome:</span>
+			<input id="teclado" type="text" />
+			<span id="resultadoTeclado">?</span>
+			<hr />
+
+			<h3>Formulário</h3>
+			<form>
+				<span>Nome:</span>
+				<input id="nome" type="text" />
+
+				<span>E-mail:</span>
+				<input id='email' type="text" />
+
+				<span>Motivo do contato:</span>
+				<select id="opcao">
+					<option value="">-- Selecione --</option>
+					<option value="duvida">Dúvida</option>
+					<option value="sugestao">Sugestão</option>
+				</select>
+				
+				<button id="botao" type="submit">Enviar</button>
+			</form>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,161 @@
+/* Comentario */
+#conteudo {
+  background: green;
+  padding: 15px;
+}
+#conteudo h1 {
+  color: blue;
+}
+#conteudo a {
+  color: blue;
+  font-weight: bold;
+}
+#conteudo a:hover {
+  color: yellow;
+}
+footer {
+  padding: 15px;
+  background: red;
+}
+.cor {
+  color: purple;
+}
+
+
+.item-1 {
+  background: yellow;
+  margin-bottom: 2px;
+}
+.item-2 {
+  background: yellow;
+  margin-bottom: 2px;
+}
+.item-3 {
+  background: yellow;
+  margin-bottom: 2px;
+}
+
+.item-0 {
+  background: blue;
+  margin-bottom: 4px;
+}
+.item-1 {
+  background: blue;
+  margin-bottom: 4px;
+}
+.item-2 {
+  background: blue;
+  margin-bottom: 4px;
+}
+.item-3 {
+  background: blue;
+  margin-bottom: 4px;
+}
+.item-4 {
+  background: blue;
+  margin-bottom: 4px;
+}
+
+.item-1 {
+  background: orange;
+  margin-bottom: 6px;
+}
+.item-2 {
+  background: red;
+  margin-bottom: 6px;
+}
+.item-3 {
+  background: purple;
+  margin-bottom: 6px;
+}
+
+.col-1 {
+  width: 8.3333333333%;
+  background: yellow;
+}
+.col-2 {
+  width: 16.6666666667%;
+  background: yellow;
+}
+.col-3 {
+  width: 25%;
+  background: yellow;
+}
+.col-4 {
+  width: 33.3333333333%;
+  background: yellow;
+}
+.col-5 {
+  width: 41.6666666667%;
+  background: yellow;
+}
+.col-6 {
+  width: 50%;
+  background: yellow;
+}
+.col-7 {
+  width: 58.3333333333%;
+  background: yellow;
+}
+.col-8 {
+  width: 66.6666666667%;
+  background: yellow;
+}
+.col-9 {
+  width: 75%;
+  background: yellow;
+}
+.col-10 {
+  width: 83.3333333333%;
+  background: yellow;
+}
+.col-11 {
+  width: 91.6666666667%;
+  background: yellow;
+}
+.col-12 {
+  width: 100%;
+  background: yellow;
+}
+
+.alerta {
+  background: #a42e5c;
+  color: yellow;
+  padding: 15px;
+  text-align: center;
+}
+
+
+h1 {
+  color: green;
+  background: black;
+  padding: 10px 5px;
+}
+
+h2 {
+  color: orange;
+  background: black;
+  padding: 10px 5px;
+}
+
+.cor-bg, .style-p {
+  color: yellow;
+}
+.cor-bg, .style-p {
+  background: grey;
+}
+.style-p {
+  padding: 15px;
+  text-align: center;
+  border: 2px solid yellow;
+}
+
+.cor-p {
+  background: black;
+  color: red;
+}
+
+h3 {
+  background: green;
+  color: black;
+}/*# sourceMappingURL=estilo.css.map */

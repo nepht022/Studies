@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button id="btnSaudacao">Saudacao</button><hr>
+        <input type="text" id="cep" placeholder="CEP">
+        <button id="btnCep">Consultar Cep</button>
+    </body>
+    
+    <script type="module">
+        //import {saudacao, getEnderecoByCep} from './lib.mjs'
+
+        document.querySelector('#btnSaudacao').addEventListener('click', async ()=>{
+            const modulo1 = await import('./lib.mjs')
+            console.log(modulo1.saudacao())
+        })
+        document.querySelector('#btnCep').addEventListener('click', async ()=>{
+            let cep = document.querySelector('#cep').value
+            if(cep.length == 8){
+                const modulo2 = await import('./lib2.mjs')
+                modulo2.getEnderecoByCep(cep)
+                    .then(dados => console.log(dados))     
+            }else{
+                console.log('Tente digitar somente numeros')
+            }
+        })
+
+
+    </script>
+</html>

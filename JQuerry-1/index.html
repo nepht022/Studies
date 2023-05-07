@@ -1,0 +1,49 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery</title>
+        <!--<script src="jquery-3.6.4.min.js"></script>-->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <h1>jQuery - Selecionando Elementos</h1>
+        <div>Div 1</div>
+        <div class="selecionavel">Div 2</div>
+        <ul>
+            <li>Menu 1 - Item 1</li>
+            <li class="selecionavel">Menu 1 - Item 2</li>
+            <li>Menu 1 - Item 3</li>
+        </ul>
+        <ul>
+            <li>Menu 2 - Item 1</li>
+            <li>Menu 2 - Item 2</li>
+            <li class="selecionavel">Menu 2 - Item 3</li>
+        </ul>
+        <input type="text" placeholder="campo 1">
+        <input type="text" placeholder="campo 2">
+
+        <select class="select">
+            <option>Selecione a Opção</option>
+            <option class="selecionavel">Opção 1</option>
+            <option>Opção 2</option>
+            <option>Opção 3</option>
+        </select>
+        <br>
+
+        <img id="imagem" src="carro.jpg">
+    </body>
+
+    <script>
+        $('h1')//selecionando todos h1
+        console.log($('.selecionavel'));//selecionando todos com a classe 'selecionavel'
+        console.log($('#imagem'));
+        console.log($('li.selecionavel'));//selecionando todos li com a classe 'selecionavel'
+        console.log($('.select .selecionavel'));
+
+        console.log($('li:first'));//primeiro elemento
+        console.log($('li:last'));//ultimo elemento
+        console.log($('li:even'));//somente indices pares
+        console.log($('li:odd'));//somente indices impares
+    </script>
+</html>

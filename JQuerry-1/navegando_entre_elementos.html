@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Navengando entre elementos</title>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function(){
+				console.log($('.secao1').parent())//retorna o elemento pai
+				console.log($('.item').closest('ul'))//retorna uma pesquisa especifica de um elemento pai/avo etc
+				console.log($('#rodape').find('span'))//retorna uma pesquisa especifica de um elemento filho/neto etc
+			})
+		</script>
+	</head>
+	<body>	
+
+		<div id="topo">
+			<ul class="menu">
+				<li class="item"></li>
+				<li class="item"></li>
+			</ul>
+		</div>
+
+		<div id="pagina">
+			<div class="secao1">
+				<div class="subSecao"></div>
+			</div>
+			
+			<div class="secao2">
+				<h1></h1>
+			</div>
+		</div>		
+		
+		<div id="rodape">
+			<div>
+				<p></p>	
+				<span id="opcao1"></span>
+			</div>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            //array flat e flat map
+            let array = [1, 2, 3, 4, [5, 6, 7, 8, [9, 10, [11, 12]]]]
+            let array2 = array.flat(2)//quantidade de niveis que serao levadas a um array unidimensional
+            console.log(array2)
+
+            let nomes = [
+                'Joao,Jose,Maria',
+                'Sandro,Marcia',
+                'Antonia,Fernanda,Marcos'
+            ]
+            console.log(nomes)
+
+            let nomesMap = nomes.map(itens => {//cada linha vira um array e os valores antes e após a virgula viram itens desse array
+                return itens.split(',')
+            })
+            console.log(nomesMap)
+
+            let nomesFlatMap = nomes.flatMap(itens => {//os valores antes e após a virgula viram itens de um array unisimensional
+                return itens.split(',')
+            })
+            console.log(nomesFlatMap)
+
+        </script>
+    </body>
+</html>

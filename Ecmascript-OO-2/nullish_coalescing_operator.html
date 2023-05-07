@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    </body>
+    
+    <script>
+        let teste1 = 0 || 'Valor a direita'//o || ignora valores que poderiam ser uteis como 0
+        let teste2 = null || 'Valor a direita'
+        let teste3 = 'Valor a esquerda' || 'Valor a direita'
+        let teste = [teste1, teste2, teste3]
+        console.log(teste)
+
+        //usando nullish coalescing(??), o || retorna esses valores
+        teste1 = 0 ?? 'Valor a direita'
+        teste2 = null ?? 'Valor a direita'
+        teste3 = 'Valor a esquerda' ?? 'Valor a direita'
+        teste = [teste1, teste2, teste3]
+        console.log(teste)
+    </script>
+</html>

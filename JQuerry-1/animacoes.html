@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Animações</title>
+		<style>
+		
+		</style>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function(){
+                $("#button").on('click', function(){
+                    $('div').animate({
+                        'width':'40px',
+                        'height':'40px',
+                        'margin-left': '200px',
+                        'margin-top':'200px',
+                        'border-radius':'25px'
+                    }, 
+                    {//pode ser usado um valor numerico 
+                        duration: 1500,
+                        start: function(){console.log('Animação Iniciada')},
+                        complete: function(){console.log('Animação Finalizada')}
+                    })
+                })
+			})	
+		</script>
+	</head>
+	<body>
+        <button type="button" id="button">Iniciar Animação</button>
+        <div style="width: 80px; height: 80px; border: 2px solid black; background: #ddd; margin-top: 20px;"></div>
+	</body>
+</html>

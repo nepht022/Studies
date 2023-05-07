@@ -1,0 +1,139 @@
+$default-color: red;//escopo global
+$default-spacing: 15px;
+/* Comentario */
+//arquivos scss criados com _ antes do nome nao sao convertidos automaticamente para css
+@import '_variaveis.scss';
+#conteudo{
+    $default-color: blue/*!global deixa o escopo global*/;//escopo locla do id
+    background: green;
+    padding: $default-spacing;
+    h1{
+        color: $default-color;
+    }
+    a{
+        color: $default-color;
+        font-weight: bold;
+        &:hover{
+            color: yellow;
+        }
+    } 
+}
+footer{
+    padding: $default-spacing;
+    background: $default-color;
+}
+//#{} = imterpolação para uso de variavel
+$classe: cor;
+$atributo: color;
+$cor: purple;
+.#{$classe}{
+    #{$atributo}: $cor;
+}
+
+
+@for $i from 1 through 3{
+    .item-#{$i}{
+        background: yellow;
+        margin-bottom: 2px;
+    }
+}
+
+$x: 0;
+@while($x<5){
+    .item-#{$x}{
+        background: blue;
+        margin-bottom: 4px;
+    }
+    $x:$x+1;
+}
+
+$x: 1;
+$cores: orange, red, purple;
+@each $i in $cores{
+   .item-#{$x}{
+        background: $i;
+        margin-bottom: 6px;
+    } 
+    $x:$x+1;
+}
+
+$total: 12;
+@function largura-coluna($coluna){
+    @return percentage($coluna/$total);
+}
+@for $i from 1 through $total{
+    .col-#{$i}{
+        width: largura-coluna($i);
+        background: yellow;
+    }
+}
+
+.alerta{
+    background: mix(orange, purple, 28%) /*mistura de cores*/;
+    //lighten(blue, 28%) deixa a cor mais clara
+    //darken(blue, 20%) deixa a cor mais escura
+    color: yellow;
+    padding: 15px;
+    text-align: center;
+}
+
+
+@mixin titulo($cor, $cor-bg:black){
+    color: $cor;
+    background: $cor-bg;
+    padding: 10px 5px;
+}
+h1{
+    @include titulo(green);
+}
+h2{
+    @include titulo(orange);
+}
+
+%cor{//classe com % ao inves de . nao é criada quando é transferido de scss para css
+    color: yellow;
+}
+.cor-bg{
+    @extend %cor;
+    background: grey;
+}
+.style-p{
+  @extend .cor-bg;
+  padding: 15px;
+  text-align: center;
+  border: 2px solid yellow;
+}
+
+$cor: black;
+@if($cor == green){
+    .cor-p{
+        background: green;
+        color: yellow;
+    }
+}@else if($cor == black){
+    .cor-p{
+        background: black;
+        color: red;
+    }
+}@else{
+   .cor-p{
+        background: purple;
+        color: white;
+    } 
+}
+
+@mixin tema($tema:padrao){
+    @if($tema == natal){
+        background: red;
+        color: white;
+    }@else if($tema == blackfriday){
+        background: black;
+        color: yellow;
+    }@else{
+        background: green;
+        color: black;
+    }
+}
+h3{
+    @include tema();
+}

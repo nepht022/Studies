@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            class Carro{
+                constructor(marca, modelo, ano){
+                    this.marca = marca
+                    this.modelo = modelo
+                    this.ano = ano
+                }
+
+                toString(){//pega os valores das atributos da classe e transforma em uma string
+                    return `Carro ${this.marca}, do modelo ${this.modelo} de ${this.ano}`
+                }
+            }
+
+            let c1 = new Carro('Jeep', 'Renegade', 2021)
+            console.log(c1.toString())
+        </script>
+    </body>
+</html>

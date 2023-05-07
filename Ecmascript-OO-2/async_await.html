@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            let asyncProcess = new Promise((resolve, reject)=>{
+                setTimeout(()=>resolve('Sucesso no processo assincrono'), 3000)
+            })
+
+            async function recuperaDados(){
+                await asyncProcess.then(p => console.log(p))//essa linha precisa ser concluida(os 3 segundos da promise) antes do resto do codigo continuar
+
+                console.log('Processamento assincrono 1')
+
+                await fetch('https://jsonplaceholder.typicode.com/comments')
+                    .then(r => r.json())
+                    .then(d => console.log('Comments: ',d))
+
+                console.log('Processamento assincrono 2')
+
+                await fetch('https://jsonplaceholder.typicode.com/posts')
+                    .then(r => r.json())
+                    .then(d => console.log('Posts: ',d))
+
+                console.log('Processamento assincrono 3')
+
+                return 'Fim'
+            }
+
+            recuperaDados().then(param=>console.log(param))
+        </script>
+    </body>
+</html>

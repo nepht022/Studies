@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            //object values e entries
+            let obj = {//objeto literal
+                nome: 'Rodrigo',
+                profissional: {
+                    site: 'rodrigofreire.com',
+                    profissao: 'estudante'     
+                },
+                hobbies: [
+                    {id: 1, hobby: 'trilhas'},
+                    {id: 2, hobby: 'dormir'}
+                ],
+                pais: 'Brasil'
+            }
+            console.log(obj)
+            console.log(Object.values(obj))//O Obj literal vira um array
+            console.log(Object.entries(obj))//O Obj literal vira array de key => value
+        </script>
+    </body>
+</html>

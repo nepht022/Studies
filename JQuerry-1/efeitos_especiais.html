@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Efeitos Especiais</title>
+		<style>
+			button {
+				margin-bottom: 5px;
+				width: 100px;
+			}
+			.div {
+				width: 100px;
+				height: 100px;
+			}
+			.grupo {
+				padding: 25px;
+				float: left
+			}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function(){
+				//$('#div1').hide(4000)//4segundos
+				//$('#div1').show(1000)
+
+				$('#btn1').on('click', function(){
+					$('#div1').toggle(1500)//ao clicar, diminui ou aumenta o tamanho do quadrado ate sumir/aparecer
+				})
+
+				$('#div2').fadeTo(1500, 0.75)//define uma opacidade
+				$('#btn2').on('click', function(){
+					$('#div2').fadeToggle(1500)//ao clicar vai diminuindo ou aumentando a opacidade ate sumir/aparecer
+				})
+
+				$('#btn3').on('click', function(){
+					$('#div3').slideToggle(1500)//ao clicar desliza o elemento pra cima ou baixo ate sumir/aparecer
+				})
+			})	
+		</script>
+	</head>
+	<body>
+		<div class="grupo">
+			<button type="button" id="btn1">DIV 1</button>
+			<div id="div1" class="div div1" style="background: red;"></div>
+		</div>
+
+		<div class="grupo">
+			<button id="btn2" type="button">DIV 2</button>
+			<div id="div2" class="div div2" style="background: green;"></div>
+		</div>
+
+		<div class="grupo">
+			<button id="btn3" type="button">DIV 3</button>
+			<div id="div3" class="div div3" style="background: blue;"></div>
+		</div>		
+	</body>
+</html>

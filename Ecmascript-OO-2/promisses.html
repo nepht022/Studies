@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            let resposta = {}
+            let promessa = new Promise((resolve, reject) => {
+               try{
+                    setTimeout(function(){
+                        resposta = {dados: {msg: 'Dados recuperados com sucesso!'}}
+                        resolve('Sucesso')
+                    }, 3000)
+               }catch(e){
+                    setTimeout(function(){
+                        reject(e)
+                    }, 3000)
+               }
+            })
+            console.log(promessa)
+
+            setTimeout(function(){
+                console.log(promessa)
+                console.log(resposta)
+            }, 5000)
+        </script>
+    </body>
+</html>
