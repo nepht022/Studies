@@ -1,0 +1,13 @@
+instalar composer
+	https://getcomposer.org/download/
+instalar slim v3 ou v4
+	v4
+		php composer.phar create-project slim/slim-skeleton --prefer-dist
+	v3
+		php composer.phar create-project slim/slim-skeleton:^3.0 slim3 
+	https://www.slimframework.com/docs/v3/start/installation.html
+instalar illuminate
+	php composer.phar require illuminate/database
+começar o projeto
+	adicionar dados nos arquivos sobre db
+	
